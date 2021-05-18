@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Галерея</title>
+    <!--Подключение стилей-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <h1 class="main-heading">Галерея</h1>
+    <div class="slider-container swiper-container">
+        <div class="slider-wrapper swiper-wrapper">
+
+            <div class="slide swiper-slide">
+                <div class="image-slider">
+                    <img src="./images/01.jpg" alt="Car">
+                </div>
+            </div>
+
+            <div class="slide swiper-slide">
+                <div class="image-slider">
+                    <img src="./images/02.jpg" alt="Car">
+                </div>
+            </div>
+
+            <div class="slide swiper-slide">
+                <div class="image-slider">
+                    <img src="./images/03.jpg" alt="Car">
+                </div>
+            </div>
+
+            <div class="slide swiper-slide">
+                <div class="image-slider">
+                    <img src="./images/04.jpg" alt="Car">
+                </div>
+            </div>
+        </div>
+        <!--Стрелки слайдера-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!--Пагинация слайдера -->
+        <div class="swiper-pagination"></div>
+    </div>
+        <!--  Галерея  -->
+    <div class="gallery-container">
+        <div class="preview">
+            <div class="preview-img"><img data-image src="./images/01.jpg" alt="Car"></div>
+            <div class="preview-img"><img data-image src="./images/02.jpg" alt="Car"></div>
+            <div class="preview-img"><img data-image src="./images/03.jpg" alt="Car"></div>
+            <div class="preview-img"><img data-image src="./images/04.jpg" alt="Car"></div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <img class="popup-image" src="./images/01.jpg" alt="Image">
+        <div class="close-button" data-close>&#215;</div>
+    </div>
+</div>
+<!--Подключение скриптов-->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="module">
+    import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js';
+    const swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        grabCursor: true ,
+        keyboard: {
+            enable: true
+        },
+        autoHeight: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        // autoplay: {
+        //     delay: 2000
+        // }
+        speed: 900
+
+    });
+</script>
+<script src="./scripts/gallery.js"></script>
+</body>
+</html>
